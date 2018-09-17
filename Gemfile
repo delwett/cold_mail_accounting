@@ -10,12 +10,12 @@ end
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
-#new gems
 gem 'slim-rails'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'aasm'
 gem 'devise'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
