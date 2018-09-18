@@ -8,12 +8,17 @@ h2 Edit #{resource_name.to_s.humanize}
     br
     = f.email_field :email, autofocus: true, autocomplete: "email"
 
+  div class="field"
+    = f.label :user_name
+    br
+    = f.text_field :user_name, autocomplete: "user_name"
+
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div Currently waiting confirmation for: #{ resource.unconfirmed_email}
 
   div class="field"
     = f.label :password
-    i leave blank if you dont want to change it
+    i  'leave blank if you dont want to change it'
     br
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
@@ -27,7 +32,7 @@ h2 Edit #{resource_name.to_s.humanize}
 
   div class="field"
     = f.label :current_password
-    i we need your current password to confirm your changes
+    i  'we need your current password to confirm your changes'
     br
     = f.password_field :current_password, autocomplete: "current-password"
 
