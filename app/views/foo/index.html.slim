@@ -1,0 +1,6 @@
+h1 Foo#index
+p Find me in app/views/foo/index.html.slim
+-if user_signed_in?
+  =link_to "Log_out", destroy_user_session_path, method: :delete
+-else
+  =link_to "login", new_user_session_path
