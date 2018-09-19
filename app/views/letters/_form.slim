@@ -1,7 +1,6 @@
 = form_for @letter do |f|
   - if @letter.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@letter.errors.count, "error")} prohibited this letter from being saved:"
+      .g4 = "#{pluralize(@letter.errors.count, "error")} prohibited this letter from being saved:"
       ul
         - @letter.errors.full_messages.each do |message|
           li = message
@@ -19,10 +18,10 @@
       .col-2 =f.label :comment
       .col-1 =f.text_area :comment
 
-  -if @edit_status and !@letter.completed?
-    .field class="table"
-      div class="row"
-        div class="col-2"= f.label :mail_state
-        div class="col-1"= f.select :mail_state, Letter::STATE_TYPES
+  -if @edit_status and !(@letter.completed? || @letter.cancelled?)
+    .field.table
+      .row
+        .col-2 =f.label :letter_status
+        .col-1 =f.select :letter_status, @letter.aasm.events.map(&:name)
 
   .actions = f.submit

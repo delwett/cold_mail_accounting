@@ -1,18 +1,20 @@
 .container Hello
-.container
+.table
   .row
     .col.border Owner name
     .col.border URL
+    .col.border E-mail
     .col.border Status
     .col.border Commentary
     .col.border Actions
   =@letters.each do |letter|
     .row
-      .col.border sfd
+      .col.border =current_user.user_name
       .col.border =letter.url
       .col.border =letter.email
       .col.border =letter.letter_status
       .col.border =letter.comment
+      .col.border =link_to "Edit_it", edit_letter_path(letter)
 
 
 .container =link_to "create new", new_letter_path, method: :get;
