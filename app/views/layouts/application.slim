@@ -1,4 +1,4 @@
-DOCTYPE html
+doctype html
 html
   head
     title
@@ -9,4 +9,8 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = yield
+    -if user_signed_in?
+      .h2.text-center.bg-primary = t('.application_hello', name: current_user.user_name)
+    -else
+      .h2 -t('.application_welcome')
+    .container = yield

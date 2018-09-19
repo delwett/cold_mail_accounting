@@ -2,11 +2,21 @@ ru:
   layouts:
     application:
       'application_title':  'Учет холодной почты'
+      'application_hello': 'Здравствуй, %{name}'
+      'application_welcome': 'Добро пожаловать, пожалуйста войдите в учетную запись'
     letters:
+      index:
+        'created_by': 'Кем создано'
+        'status': 'Статус'
+        'comment': 'Комментарий'
+        'action': 'Действие'
+        'edit': 'Изменить'
       form:
-        'error_pluralize': 'Ошибка'
-        'error_header': ', cохранить запись невозможно'
         'comment_lable': 'Комментарий'
         'status_lable': 'Выберите статус'
         'url_placeholder': 'Введите URL адрес'
         'e-mail_placeholder': 'Введите e-mail адрес'
+    helpers:
+      submit:
+        create: 'Создание письма'
+        update: 'Модификация письма'

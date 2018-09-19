@@ -1,20 +1,18 @@
-.container Hello
+.row.sticky-top
+  .col =link_to "create new", new_letter_path, method: :get;
 .table
-  .row
-    .col.border Owner name
-    .col.border URL
-    .col.border E-mail
-    .col.border Status
-    .col.border Commentary
-    .col.border Actions
-  =@letters.each do |letter|
+  .row.text-center
+    .col-2.border =t('.created_by')
+    .col-2.border URL
+    .col-3.border E-mail
+    .col-2.border =t('.status')
+    .col-2.border =t('.comment')
+    .col-1.border.p-0 =t('.action')
+  -@letters.each do |letter|
     .row
-      .col.border =current_user.user_name
-      .col.border =letter.url
-      .col.border =letter.email
-      .col.border =letter.letter_status
-      .col.border =letter.comment
-      .col.border =link_to "Edit_it", edit_letter_path(letter)
-
-
-.container =link_to "create new", new_letter_path, method: :get;
+      .col-2.border =current_user.user_name
+      .col-2.border =letter.url
+      .col-3.border =letter.email
+      .col-2.border =letter.letter_status
+      .col-2.border =truncate(letter.comment, length: 8)
+      .col-1.border =link_to t('.edit'), edit_letter_path(letter)

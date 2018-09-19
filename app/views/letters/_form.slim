@@ -2,7 +2,6 @@
   .container.w-50.text-center
     = form_for @letter do |f|
       - if @letter.errors.any?
-        .list-group-item.list-group-item-danger.p-1= "#{pluralize(@letter.errors.count, t('.error_pluralize'))} #{t('.error_header')}"
         .list-group-item.list-group-item-warning
           -@letter.errors.full_messages.each do |message|
             .mb-1 = message
