@@ -42,6 +42,7 @@ en:
         'comment': 'Commentary'
         'action': 'Action'
         'edit': 'Edit'
+        'show': 'Show'
       form:
         'comment_lable': 'Comment'
         'status_lable': 'Select status'

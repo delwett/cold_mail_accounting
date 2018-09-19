@@ -11,6 +11,7 @@ ru:
         'comment': 'Комментарий'
         'action': 'Действие'
         'edit': 'Изменить'
+        'show': 'Показать'
       form:
         'comment_lable': 'Комментарий'
         'status_lable': 'Выберите статус'
