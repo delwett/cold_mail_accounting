@@ -1,2 +1,18 @@
-h1 Letters#index
-p Find me in app/views/letters/index.html.slim
+.container Hello
+.container
+  .row
+    .col.border Owner name
+    .col.border URL
+    .col.border Status
+    .col.border Commentary
+    .col.border Actions
+  =@letters.each do |letter|
+    .row
+      .col.border sfd
+      .col.border =letter.url
+      .col.border =letter.email
+      .col.border =letter.letter_status
+      .col.border =letter.comment
+
+
+.container =link_to "create new", new_letter_path, method: :get;

@@ -15,6 +15,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'aasm'
 gem 'devise'
+gem 'valid_url'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
