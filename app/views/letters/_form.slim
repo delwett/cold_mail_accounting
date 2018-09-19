@@ -1,27 +1,25 @@
-= form_for @letter do |f|
-  - if @letter.errors.any?
-      .g4 = "#{pluralize(@letter.errors.count, "error")} prohibited this letter from being saved:"
-      ul
-        - @letter.errors.full_messages.each do |message|
-          li = message
+.align-middle.p-2
+  .container.w-50.text-center
+    = form_for @letter do |f|
+      - if @letter.errors.any?
+        .list-group-item.list-group-item-danger.p-1= "#{pluralize(@letter.errors.count, t('.error_pluralize'))} #{t('.error_header')}"
+        .list-group-item.list-group-item-warning
+          -@letter.errors.full_messages.each do |message|
+            .mb-1 = message
+      .row.align-items-center.text-right.mt-3
+        .col-3 URL
+        .col-9 =f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
+      .row.align-items-center.text-right.mt-3
+        .col-3 E-mail
+        .col-9 =f.text_field :email, class: "form-control", placeholder: t('.e-mail_placeholder')
+      .row.align-items-center.text-right.mt-3
+        .col-3 =t('.comment_lable')
+        .col-9 =f.text_area :comment, class: "form-control"
 
-  .field.table
-    .row
-      .col-2 =f.label :url
-      .col-1 =f.text_field :url
-  .field.table
-    .row
-      .col-2 =f.label :email
-      .col-1 =f.text_field :email
-  .field.table
-    .row
-      .col-2 =f.label :comment
-      .col-1 =f.text_area :comment
+      -if @edit_status and !(@letter.completed? || @letter.cancelled?)
+        .row.align-items-center.text-right.mt-3
+          .col-3 =t('.status_lable')
+          .col-9 =f.select :letter_status, @letter.aasm.events.map(&:name), {}, { class: "form-control" }
 
-  -if @edit_status and !(@letter.completed? || @letter.cancelled?)
-    .field.table
-      .row
-        .col-2 =f.label :letter_status
-        .col-1 =f.select :letter_status, @letter.aasm.events.map(&:name)
-
-  .actions = f.submit
+      .row.p-5
+        .col =f.submit class: "btn btn-primary"

@@ -33,3 +33,15 @@ en:
     layouts:
       application:
         'application_title': 'Cold Mail Accounting'
+    letters:
+      form:
+        'error_pluralize': 'Error'
+        'error_header': 'prohibited this letter from being saved'
+        'comment_lable': 'Comment'
+        'status_lable': 'Select status'
+        'url_placeholder': 'Enter URL address'
+        'e-mail_placeholder': 'Enter e-mail address'
+    helpers:
+      submit:
+        create: 'Create a letter'
+        update: 'Update a letter'

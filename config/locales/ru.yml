@@ -2,3 +2,11 @@ ru:
   layouts:
     application:
       'application_title':  'Учет холодной почты'
+    letters:
+      form:
+        'error_pluralize': 'Ошибка'
+        'error_header': ', cохранить запись невозможно'
+        'comment_lable': 'Комментарий'
+        'status_lable': 'Выберите статус'
+        'url_placeholder': 'Введите URL адрес'
+        'e-mail_placeholder': 'Введите e-mail адрес'
