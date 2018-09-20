@@ -58,12 +58,13 @@ en:
       update: 'Update a letter'
 
   new: 'New'
-  in_progress: 'In Progress'
+  in_progress: 'In progress'
   completed: 'Completed'
   cancelled: 'Cancelled'
 
   notice_created: 'Letter was successfully created.'
   notice_updated: 'Letter was successfully updated.'
+  notice_error_id: 'Letter is not exist or you have not access to it.'
 
   url_lable: 'URL'
   email_lable: 'E-mail'

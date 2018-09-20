@@ -3,12 +3,8 @@ class Letter < ApplicationRecord
   belongs_to :user
   validates :url, :email, presence: true
   validates :email, uniqueness: true
-  validates :email, format: {
-      with: URI::MailTo::EMAIL_REGEXP
-  }
-  validates :url, format: {
-      :with => /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i
-  }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :url, format: { :with => /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i }
 
   aasm column: 'letter_status' do
     state :new, initial: true

@@ -1,5 +1,7 @@
 .row.sticky-top
   .col = link_to t(:create_new), new_letter_path, method: :get;
+- if flash.notice
+  .h5.text-danger.text-center = flash.notice
 table.table-bordered.table-hover
   thead.text-center.table-info
     tr

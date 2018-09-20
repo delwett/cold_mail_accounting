@@ -4,9 +4,7 @@ class LettersController < ApplicationController
     @letters = current_user.letters
   end
 
-  def show
-
-  end
+  def show; end
 
   def new
     @letter = Letter.new
@@ -23,9 +21,7 @@ class LettersController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     @letter.update(letter_params.except(:letter_status))
@@ -40,12 +36,13 @@ class LettersController < ApplicationController
   end
 
   private
-   def letter_params
-     params.require(:letter).permit(:url, :email, :comment, :letter_status)
-   end
+
+  def letter_params
+    params.require(:letter).permit(:url, :email, :comment, :letter_status)
+  end
 
   def set_status_from_params
-    case params[:letter][:letter_status]
+    case letter_params[:letter_status]
     when 'to_in_progress'
       @letter.to_in_progress!
     when 'to_completed'
@@ -56,7 +53,9 @@ class LettersController < ApplicationController
   end
 
   def set_letter
-    @letter = Letter.find(params[:id])
+    @letter = current_user.letters.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to letters_path, notice: t(:notice_error_id)
   end
 
 end
