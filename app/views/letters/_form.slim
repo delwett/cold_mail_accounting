@@ -3,22 +3,22 @@
     = form_for @letter do |f|
       - if @letter.errors.any?
         .list-group-item.list-group-item-warning
-          -@letter.errors.full_messages.each do |message|
+          - @letter.errors.full_messages.each do |message|
             .mb-1 = message
       .row.align-items-center.text-right.mt-3
         .col-3 URL
-        .col-9 =f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
+        .col-9 = f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
       .row.align-items-center.text-right.mt-3
         .col-3 E-mail
-        .col-9 =f.text_field :email, class: "form-control", placeholder: t('.e-mail_placeholder')
+        .col-9 = f.text_field :email, class: "form-control", placeholder: t('.e-mail_placeholder')
       .row.align-items-center.text-right.mt-3
-        .col-3 =t('.comment_lable')
-        .col-9 =f.text_area :comment, class: "form-control"
+        .col-3 = t('.comment_lable')
+        .col-9 = f.text_area :comment, class: "form-control"
 
-      -if @edit_status and !(@letter.completed? || @letter.cancelled?)
+      -if @letter.persisted? and !(@letter.completed? || @letter.cancelled?)
         .row.align-items-center.text-right.mt-3
-          .col-3 =t('.status_lable')
-          .col-9 =f.select :letter_status, available_states.collect {|av| [t(av, scope: 'letters.form.actions'), av]},
+          .col-3 = t('.status_lable')
+          .col-9 = f.select :letter_status, available_states.collect {|av| [t(av, scope: 'letters.form.actions'), av]},
                   {}, { class: "form-control" }
       .row.p-5
-        .col =f.submit class: "btn btn-primary"
+        .col = f.submit class: "btn btn-primary"

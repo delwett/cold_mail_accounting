@@ -1,4 +1,6 @@
 .h3.text-primary.text-center =t('.show_lable')
+- if flash.notice
+  .h5.text-success.text-center = flash.notice
 table.table-bordered.mx-auto.w-50.mt-1.table-hover
   tbody
     tr

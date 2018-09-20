@@ -1,7 +1,7 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update]
   def index
-    @letters = Letter.all
+    @letters = current_user.letters
   end
 
   def show
@@ -16,7 +16,7 @@ class LettersController < ApplicationController
     @letter = current_user.letters.build(letter_params)
     respond_to do |format|
       if @letter.save
-        format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
+        format.html { redirect_to @letter, notice: t(:notice_created)}
       else
         format.html { render :new }
       end
@@ -24,7 +24,7 @@ class LettersController < ApplicationController
   end
 
   def edit
-    @edit_status = true
+
   end
 
   def update
@@ -32,9 +32,8 @@ class LettersController < ApplicationController
     respond_to do |format|
       if @letter.save
         set_status_from_params
-        format.html { redirect_to @letter, notice: 'Letter was successfully updated.' }
+        format.html { redirect_to @letter, notice: t(:notice_updated)}
       else
-        @edit_status = true
         format.html { render :edit }
       end
     end

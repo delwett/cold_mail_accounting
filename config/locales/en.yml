@@ -66,3 +66,5 @@ en:
   in_progress: 'In Progress'
   completed: 'Completed'
   cancelled: 'Cancelled'
+  notice_created: 'Letter was successfully created.'
+  notice_updated: 'Letter was successfully updated.'
