@@ -30,25 +30,33 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-    layouts:
-      application:
-        'application_title': 'Cold Mail Accounting'
-        'application_hello': 'Hello, %{name}'
-        'application_welcome': 'Welcome, please log in'
-    letters:
-      index:
-        'created_by': 'Created by'
-        'status': 'Status'
-        'comment': 'Commentary'
-        'action': 'Action'
-        'edit': 'Edit'
-        'show': 'Show'
-      form:
-        'comment_lable': 'Comment'
-        'status_lable': 'Select status'
-        'url_placeholder': 'Enter URL address'
-        'e-mail_placeholder': 'Enter e-mail address'
-    helpers:
-      submit:
-        create: 'Create a letter'
-        update: 'Update a letter'
+  layouts:
+    application:
+      'application_title': 'Cold Mail Accounting'
+      'application_hello': 'Hello, %{name}'
+      'application_welcome': 'Welcome, please log in'
+  letters:
+    index:
+      'created_by': 'Created by'
+      'status': 'Status'
+      'comment': 'Commentary'
+      'action': 'Action'
+      'edit': 'Edit'
+      'show': 'Show'
+    form:
+      'comment_lable': 'Comment'
+      'status_lable': 'Select status'
+      'url_placeholder': 'Enter URL address'
+      'e-mail_placeholder': 'Enter e-mail address'
+      actions:
+        to_completed: 'to completed'
+        to_cancelled: 'to cancelled'
+        to_in_progress: 'to in progress'
+  helpers:
+    submit:
+      create: 'Create a letter'
+      update: 'Update a letter'
+  new: 'New'
+  in_progress: 'In Progress'
+  completed: 'Completed'
+  cancelled: 'Cancelled'

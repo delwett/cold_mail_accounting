@@ -4,20 +4,28 @@ ru:
       'application_title':  'Учет холодной почты'
       'application_hello': 'Здравствуй, %{name}'
       'application_welcome': 'Добро пожаловать, пожалуйста войдите в учетную запись'
-    letters:
-      index:
-        'created_by': 'Кем создано'
-        'status': 'Статус'
-        'comment': 'Комментарий'
-        'action': 'Действие'
-        'edit': 'Изменить'
-        'show': 'Показать'
-      form:
-        'comment_lable': 'Комментарий'
-        'status_lable': 'Выберите статус'
-        'url_placeholder': 'Введите URL адрес'
-        'e-mail_placeholder': 'Введите e-mail адрес'
-    helpers:
-      submit:
-        create: 'Создание письма'
-        update: 'Модификация письма'
+  letters:
+    index:
+      'created_by': 'Кем создано'
+      'status': 'Статус'
+      'comment': 'Комментарий'
+      'action': 'Действие'
+      'edit': 'Изменить'
+      'show': 'Показать'
+    form:
+      'comment_lable': 'Комментарий'
+      'status_lable': 'Выберите статус'
+      'url_placeholder': 'Введите URL адрес'
+      'e-mail_placeholder': 'Введите e-mail адрес'
+      actions:
+        to_completed: 'завершить'
+        to_cancelled: 'отменить'
+        to_in_progress: 'к работе'
+  helpers:
+    submit:
+      create: 'Создание письма'
+      update: 'Модификация письма'
+  new: 'Новое'
+  in_progress: 'В работе'
+  completed: 'Завершено'
+  cancelled: 'Отменено'
