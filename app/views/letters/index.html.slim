@@ -1,23 +1,21 @@
 .row.sticky-top
-  .col =link_to "create new", new_letter_path, method: :get;
+  .col = link_to t(:create_new), new_letter_path, method: :get;
 table.table-bordered.table-hover
   thead.text-center.table-info
     tr
-      th.col-2 =t('.created_by')
-      th.col-2 URL
-      th.col-2 E-mail
-      th.col-2 =t('.status')
-      th.col-2 =t('.comment')
-      th.col-2.p-0 =t('.action')
+      th.col-2 = t(:url_lable)
+      th.col-2 = t(:email_lable)
+      th.col-2 = t(:status)
+      th.col-4 = t(:comment)
+      th.col-2.p-0 = t('.action')
   tbody
-    -@letters.each do |letter|
+    - @letters.each do |letter|
       tr
-        td.col-2 =letter.user.user_name
-        td.col-2 =letter.url
-        td.col-2 =letter.email
+        td.col-2 = letter.url
+        td.col-2 = letter.email
         td.col-2 = t(letter.letter_status)
-        td.col-2 =truncate(letter.comment, length: 8)
+        td.col-4 = truncate(letter.comment, length: 25)
         td.col-2
           .row
-            .col-5 =link_to t('.edit'), edit_letter_path(letter)
-            .col-7 =link_to t('.show'), letter_path(letter)
+            .col-5 = link_to t(:edit), edit_letter_path(letter)
+            .col-7 = link_to t(:show), letter_path(letter)

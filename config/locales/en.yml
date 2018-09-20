@@ -40,17 +40,11 @@ en:
       'show_lable': 'Reviewing a letter'
     edit:
       'update_lable': 'Updating a letter'
-    create:
+    new:
       'create_lable': 'Creating a letter'
     index:
-      'created_by': 'Created by'
-      'status': 'Status'
-      'comment': 'Commentary'
       'action': 'Action'
-      'edit': 'Edit'
-      'show': 'Show'
     form:
-      'comment_lable': 'Comment'
       'status_lable': 'Select status'
       'url_placeholder': 'Enter URL address'
       'e-mail_placeholder': 'Enter e-mail address'
@@ -62,9 +56,22 @@ en:
     submit:
       create: 'Create a letter'
       update: 'Update a letter'
+
   new: 'New'
   in_progress: 'In Progress'
   completed: 'Completed'
   cancelled: 'Cancelled'
+
   notice_created: 'Letter was successfully created.'
   notice_updated: 'Letter was successfully updated.'
+
+  url_lable: 'URL'
+  email_lable: 'E-mail'
+  comment_lable: 'Comment'
+  created_by: 'Created by'
+  status: 'Status'
+  comment: 'Commentary'
+
+  create_new: 'Create new'
+  edit: 'Edit'
+  show: 'Show'

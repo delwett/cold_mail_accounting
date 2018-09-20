@@ -7,19 +7,13 @@ ru:
   letters:
     show:
       'show_lable': 'Просмотр письма'
-      edit:
-        'update_lable': 'Изменение письма'
-      create:
-        'create_lable': 'Создание письма'
+    edit:
+      'update_lable': 'Изменение письма'
+    new:
+      'create_lable': 'Создание письма'
     index:
-      'created_by': 'Кем создано'
-      'status': 'Статус'
-      'comment': 'Комментарий'
       'action': 'Действие'
-      'edit': 'Изменить'
-      'show': 'Показать'
     form:
-      'comment_lable': 'Комментарий'
       'status_lable': 'Выберите статус'
       'url_placeholder': 'Введите URL адрес'
       'e-mail_placeholder': 'Введите e-mail адрес'
@@ -31,9 +25,22 @@ ru:
     submit:
       create: 'Создание письма'
       update: 'Модификация письма'
+
   new: 'Новое'
   in_progress: 'В работе'
   completed: 'Завершено'
   cancelled: 'Отменено'
+
   notice_created: 'Письмо было успешно создано.'
   notice_updated: 'Письмо было успешно обновлено.'
+
+  url_lable: 'Адрес сайта'
+  email_lable: 'Эл. почта'
+  comment_lable: 'Комментарий'
+  created_by: 'Кем создано'
+  status: 'Статус'
+  comment: 'Комментарий'
+
+  create_new: 'Создать новую запись'
+  edit: 'Изменить'
+  show: 'Показать'

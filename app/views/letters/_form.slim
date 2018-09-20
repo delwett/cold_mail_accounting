@@ -6,13 +6,13 @@
           - @letter.errors.full_messages.each do |message|
             .mb-1 = message
       .row.align-items-center.text-right.mt-3
-        .col-3 URL
+        .col-3 = t(:url_lable)
         .col-9 = f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
       .row.align-items-center.text-right.mt-3
-        .col-3 E-mail
+        .col-3 = t(:email_lable)
         .col-9 = f.text_field :email, class: "form-control", placeholder: t('.e-mail_placeholder')
       .row.align-items-center.text-right.mt-3
-        .col-3 = t('.comment_lable')
+        .col-3 = t(:comment_lable)
         .col-9 = f.text_area :comment, class: "form-control"
 
       -if @letter.persisted? and !(@letter.completed? || @letter.cancelled?)
