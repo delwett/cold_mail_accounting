@@ -17,10 +17,6 @@ ru:
       'status_lable': 'Выберите статус'
       'url_placeholder': 'Введите URL адрес'
       'e-mail_placeholder': 'Введите e-mail адрес'
-      actions:
-        to_completed: 'завершить'
-        to_cancelled: 'отменить'
-        to_in_progress: 'к работе'
   helpers:
     submit:
       create: 'Создание письма'
@@ -30,6 +26,9 @@ ru:
   in_progress: 'В работе'
   completed: 'Завершено'
   cancelled: 'Отменено'
+  to_completed: 'завершить'
+  to_cancelled: 'отменить'
+  to_in_progress: 'к работе'
 
   notice_created: 'Письмо было успешно создано.'
   notice_updated: 'Письмо было успешно обновлено.'

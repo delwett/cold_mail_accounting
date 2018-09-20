@@ -48,10 +48,6 @@ en:
       'status_lable': 'Select status'
       'url_placeholder': 'Enter URL address'
       'e-mail_placeholder': 'Enter e-mail address'
-      actions:
-        to_completed: 'to completed'
-        to_cancelled: 'to cancelled'
-        to_in_progress: 'to in progress'
   helpers:
     submit:
       create: 'Create a letter'
@@ -61,6 +57,9 @@ en:
   in_progress: 'In progress'
   completed: 'Completed'
   cancelled: 'Cancelled'
+  to_completed: 'to completed'
+  to_cancelled: 'to cancelled'
+  to_in_progress: 'to in progress'
 
   notice_created: 'Letter was successfully created.'
   notice_updated: 'Letter was successfully updated.'
