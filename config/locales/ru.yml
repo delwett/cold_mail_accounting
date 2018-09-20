@@ -5,6 +5,12 @@ ru:
       'application_hello': 'Здравствуй, %{name}'
       'application_welcome': 'Добро пожаловать, пожалуйста войдите в учетную запись'
   letters:
+    show:
+      'show_lable': 'Просмотр письма'
+      edit:
+        'update_lable': 'Изменение письма'
+      create:
+        'create_lable': 'Создание письма'
     index:
       'created_by': 'Кем создано'
       'status': 'Статус'

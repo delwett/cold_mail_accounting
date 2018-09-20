@@ -1,0 +1,23 @@
+.h3.text-primary.text-center =t('.show_lable')
+table.table-bordered.mx-auto.w-50.mt-1.table-hover
+  tbody
+    tr
+      td.col-2.p-3 = t(:created_by, scope: 'letters.index')
+      td.col-10 = @letter.user.user_name
+    tr
+      td.col-2.p-3 URL
+      td.col-10 = @letter.url
+    tr
+      td.col-2.p-3 E-mail
+      td.col-10 = @letter.email
+
+    tr
+      td.col-2.p-3 = t(:status, scope: 'letters.index')
+      td.col-10 = t(@letter.letter_status)
+
+    tr
+      td.col-2.p-3 = t(:comment, scope: 'letters.index')
+      td.col-10 = @letter.comment
+
+.row.p-4
+  .col.text-center = button_to t(:edit, scope: 'letters.index'), edit_letter_path(@letter), class: "btn btn-primary", method: :get

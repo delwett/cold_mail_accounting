@@ -12,7 +12,7 @@ table.table-bordered.table-hover
   tbody
     -@letters.each do |letter|
       tr
-        td.col-2 =current_user.user_name
+        td.col-2 =letter.user.user_name
         td.col-2 =letter.url
         td.col-2 =letter.email
         td.col-2 = t(letter.letter_status)

@@ -36,6 +36,12 @@ en:
       'application_hello': 'Hello, %{name}'
       'application_welcome': 'Welcome, please log in'
   letters:
+    show:
+      'show_lable': 'Reviewing a letter'
+    edit:
+      'update_lable': 'Updating a letter'
+    create:
+      'create_lable': 'Creating a letter'
     index:
       'created_by': 'Created by'
       'status': 'Status'
