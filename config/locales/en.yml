@@ -30,6 +30,60 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-    layouts:
-      application:
-        'application_title': 'Cold Mail Accounting'
+  layouts:
+    application:
+      'application_title': 'Cold Mail Accounting'
+      'application_hello': 'Hello, %{name}'
+      'application_welcome': 'Welcome, please log in'
+  letters:
+    show:
+      'show_lable': 'Reviewing a letter'
+    edit:
+      'update_lable': 'Updating a letter'
+    new:
+      'create_lable': 'Creating a letter'
+    index:
+      'action': 'Action'
+    form:
+      'status_lable': 'Select status'
+      'url_placeholder': 'Enter URL address'
+      'e-mail_placeholder': 'Enter e-mail address'
+  helpers:
+    submit:
+      create: 'Create a letter'
+      update: 'Update a letter'
+
+  date:
+    formats:
+      test: '%m/%d/%y'
+  time:
+    formats:
+      test: '%m/%d/%y %H:%M'
+
+  new: 'New'
+  in_progress: 'In progress'
+  completed: 'Completed'
+  cancelled: 'Cancelled'
+  to_completed: 'to completed'
+  to_cancelled: 'to cancelled'
+  to_in_progress: 'to in progress'
+
+  notice_created: 'Letter was successfully created.'
+  notice_updated: 'Letter was successfully updated.'
+  notice_error_id: 'Letter is not exist or you have not access to it.'
+
+  url_lable: 'URL'
+  email_lable: 'E-mail'
+  comment_lable: 'Comment'
+  created_by: 'Created by'
+  status: 'Status'
+  comment: 'Commentary'
+  created_at: 'Created'
+  updated_at: 'Updated'
+
+  create_new: 'Create new'
+  edit: 'Edit'
+  show: 'Show'
+  back: 'Back'
+
+  and: ' and '

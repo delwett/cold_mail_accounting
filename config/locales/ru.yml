@@ -2,3 +2,57 @@ ru:
   layouts:
     application:
       'application_title':  'Учет холодной почты'
+      'application_hello': 'Здравствуй, %{name}'
+      'application_welcome': 'Добро пожаловать, пожалуйста войдите в учетную запись'
+  letters:
+    show:
+      'show_lable': 'Просмотр письма'
+    edit:
+      'update_lable': 'Изменение письма'
+    new:
+      'create_lable': 'Создание письма'
+    index:
+      'action': 'Действие'
+    form:
+      'status_lable': 'Выберите статус'
+      'url_placeholder': 'Введите URL адрес'
+      'e-mail_placeholder': 'Введите e-mail адрес'
+  helpers:
+    submit:
+      create: 'Создание письма'
+      update: 'Модификация письма'
+
+  date:
+    formats:
+      test: '%d.%m.%y'
+  time:
+    formats:
+      test: '%d.%m.%y %H:%M'
+
+  new: 'Новое'
+  in_progress: 'В работе'
+  completed: 'Завершено'
+  cancelled: 'Отменено'
+  to_completed: 'завершить'
+  to_cancelled: 'отменить'
+  to_in_progress: 'к работе'
+  created_at: 'Создано'
+  updated_at: 'Обновлено'
+
+  notice_created: 'Письмо было успешно создано.'
+  notice_updated: 'Письмо было успешно обновлено.'
+  notice_error_id: 'Письмо не существует или у вас нет доступа к нему.'
+
+  url_lable: 'Адрес сайта'
+  email_lable: 'Эл. почта'
+  comment_lable: 'Комментарий'
+  created_by: 'Кем создано'
+  status: 'Статус'
+  comment: 'Комментарий'
+
+  create_new: 'Создать новую запись'
+  edit: 'Изменить'
+  show: 'Показать'
+  back: 'Назад'
+
+  and: ' и '

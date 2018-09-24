@@ -1,0 +1,27 @@
+.align-middle.p-2
+  .container.w-50.text-center
+    = form_for @letter do |f|
+      - if @letter.errors.any?
+        .list-group-item.list-group-item-danger
+          .mb-1 = @letter.errors.full_messages.to_sentence(last_word_connector: t(:and))
+      .row.align-items-center.text-right.mt-3
+        .col-3 = t(:url_lable)
+        .col-9 = f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
+      .row.align-items-center.text-right.mt-3
+        .col-3 = t(:email_lable)
+        .col-9 = f.text_field :email, class: "form-control", placeholder: t('.e-mail_placeholder')
+      .row.align-items-center.text-right.mt-3
+        .col-3 = t(:comment_lable)
+        .col-9 = f.text_area :comment, class: "form-control"
+      .row.align-items-center.text-right.mt-3
+        - if @letter.persisted? and available_event
+          .col-3 = t('.status_lable')
+          .col-9 = f.select :letter_status, available_states.collect {|av| [t(av), av]},
+                  {}, { class: "form-control" }
+        - else
+          .col-3 = t(:status)
+          .col-9.text-center = t(@letter.letter_status)
+
+      .row.p-4.justify-content-md-center.text-center
+        .col-4 = link_to t(:back), letters_path, {class: "btn btn-primary", type: "button", method: :get}
+        .col-4 = f.submit class: "btn btn-primary"
