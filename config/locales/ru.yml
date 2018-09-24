@@ -22,6 +22,13 @@ ru:
       create: 'Создание письма'
       update: 'Модификация письма'
 
+  date:
+    formats:
+      test: '%d.%m.%y'
+  time:
+    formats:
+      test: '%d.%m.%y %H:%M'
+
   new: 'Новое'
   in_progress: 'В работе'
   completed: 'Завершено'
@@ -29,6 +36,8 @@ ru:
   to_completed: 'завершить'
   to_cancelled: 'отменить'
   to_in_progress: 'к работе'
+  created_at: 'Создано'
+  updated_at: 'Обновлено'
 
   notice_created: 'Письмо было успешно создано.'
   notice_updated: 'Письмо было успешно обновлено.'

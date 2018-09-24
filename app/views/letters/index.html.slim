@@ -2,22 +2,26 @@
   .col = link_to t(:create_new), new_letter_path, method: :get;
 - if flash.notice
   .h5.text-danger.text-center = flash.notice
-table.table-bordered.table-hover
+table.table-bordered.table-hover width="100%"
   thead.text-center.table-info
     tr
       th.col-2 = t(:url_lable)
       th.col-2 = t(:email_lable)
       th.col-2 = t(:status)
-      th.col-4 = t(:comment)
-      th.col-2.p-0 = t('.action')
+      th.col-3 = t(:comment)
+      th.col-2 = t('.action')
+      th.col-1 = t(:created_at)
+      th.col-1 = t(:updated_at)
   tbody
     - @letters.each do |letter|
       tr
-        td.col-2 = letter.url
-        td.col-2 = letter.email
-        td.col-2 = t(letter.letter_status)
-        td.col-4 = truncate(letter.comment, length: 25)
-        td.col-2
-          .row
-            .col-5 = link_to t(:edit), edit_letter_path(letter)
-            .col-7 = link_to t(:show), letter_path(letter)
+        td = letter.url
+        td = letter.email
+        td = t(letter.letter_status)
+        td = truncate(letter.comment, length: 30)
+        td
+          .row.text-center
+            .col-auto.ml-4 = link_to t(:edit), edit_letter_path(letter)
+            .col-auto.text-left.ml-3 = link_to t(:show), letter_path(letter)
+        td = l(letter.created_at, format: :test)
+        td = l(letter.updated_at, format: :test)

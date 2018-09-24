@@ -21,5 +21,7 @@
         - else
           .col-3 = t(:status)
           .col-9.text-center = t(@letter.letter_status)
-      .row.p-5
-        .col = f.submit class: "btn btn-primary"
+
+      .row.p-4.justify-content-md-center.text-center
+        .col-4 = link_to t(:back), letters_path, {class: "btn btn-primary", type: "button", method: :get}
+        .col-4 = f.submit class: "btn btn-primary"

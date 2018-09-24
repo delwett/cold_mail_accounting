@@ -53,6 +53,13 @@ en:
       create: 'Create a letter'
       update: 'Update a letter'
 
+  date:
+    formats:
+      test: '%m/%d/%y'
+  time:
+    formats:
+      test: '%m/%d/%y %H:%M'
+
   new: 'New'
   in_progress: 'In progress'
   completed: 'Completed'
@@ -71,6 +78,8 @@ en:
   created_by: 'Created by'
   status: 'Status'
   comment: 'Commentary'
+  created_at: 'Created'
+  updated_at: 'Updated'
 
   create_new: 'Create new'
   edit: 'Edit'
