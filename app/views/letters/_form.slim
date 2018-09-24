@@ -2,9 +2,8 @@
   .container.w-50.text-center
     = form_for @letter do |f|
       - if @letter.errors.any?
-        .list-group-item.list-group-item-warning
-          - @letter.errors.full_messages.each do |message|
-            .mb-1 = message
+        .list-group-item.list-group-item-danger
+          .mb-1 = @letter.errors.full_messages.to_sentence(last_word_connector: t(:and))
       .row.align-items-center.text-right.mt-3
         .col-3 = t(:url_lable)
         .col-9 = f.text_field :url, class: "form-control", placeholder:  t('.url_placeholder')
@@ -14,11 +13,13 @@
       .row.align-items-center.text-right.mt-3
         .col-3 = t(:comment_lable)
         .col-9 = f.text_area :comment, class: "form-control"
-
-      -if @letter.persisted? and !(@letter.completed? || @letter.cancelled?)
-        .row.align-items-center.text-right.mt-3
+      .row.align-items-center.text-right.mt-3
+        - if @letter.persisted? and available_event
           .col-3 = t('.status_lable')
           .col-9 = f.select :letter_status, available_states.collect {|av| [t(av), av]},
                   {}, { class: "form-control" }
+        - else
+          .col-3 = t(:status)
+          .col-9.text-center = t(@letter.letter_status)
       .row.p-5
         .col = f.submit class: "btn btn-primary"

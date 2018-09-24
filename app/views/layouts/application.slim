@@ -2,15 +2,15 @@ doctype html
 html
   head
     title
-      =t('.application_title')
+      = t('.application_title')
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    -if user_signed_in?
+    - if user_signed_in?
       .h2.text-center.bg-primary = t('.application_hello', name: current_user.user_name)
-    -else
-      .h2 -t('.application_welcome')
+    - else
+      .h2.text-center = t('.application_welcome')
     .container = yield
