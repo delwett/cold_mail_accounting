@@ -1,8 +1,23 @@
-.row.sticky-top
-  .col = link_to t(:create_new), new_letter_path, method: :get;
+.d-flex.justify-content-center
+  .row.sticky-top.m-1.w-75.align-items-center
+    .col-2.text-center = link_to t(:create_new), new_letter_path, {class: "btn btn-outline-primary", type: "button", method: :get};
+    .col-10 = form_tag search_letters_path, method: :post, remote: true
+      .row.text-center.align-items-center
+        .col-3
+          .col = t(:from)
+          .col = date_field_tag :from, {}, { class: "form-control" }
+        .col-3
+          .col = t(:to)
+          .col = date_field_tag :to , {}, { class: "form-control" }
+        .col-3
+          .col = t(:status)
+          .col = select_tag :stat, options_for_select(array_of_states_with_translate), { class: "form-control" }
+        .col-3
+          .col = submit_tag t(:find), {class: "btn btn-outline-primary align-middle"}
 - if flash.notice
   .h5.text-danger.text-center = flash.notice
-table.table-bordered.table-hover width="100%"
+
+table.table-bordered.table-hover
   thead.text-center.table-info
     tr
       th.col-2 = t(:url_lable)
@@ -12,16 +27,5 @@ table.table-bordered.table-hover width="100%"
       th.col-2 = t('.action')
       th.col-1 = t(:created_at)
       th.col-1 = t(:updated_at)
-  tbody
-    - @letters.each do |letter|
-      tr
-        td = letter.url
-        td = letter.email
-        td = t(letter.letter_status)
-        td = truncate(letter.comment, length: 30)
-        td
-          .row.text-center
-            .col-auto.ml-4 = link_to t(:edit), edit_letter_path(letter)
-            .col-auto.text-left.ml-3 = link_to t(:show), letter_path(letter)
-        td = l(letter.created_at, format: :test)
-        td = l(letter.updated_at, format: :test)
+  tbody.js-letter-row
+    = render partial: "letter_row", collection:  @letters

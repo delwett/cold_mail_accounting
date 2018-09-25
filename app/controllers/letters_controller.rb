@@ -35,6 +35,20 @@ class LettersController < ApplicationController
     end
   end
 
+  def search
+    to = params[:to].to_date || Date.today
+    from = params[:from].to_date || to - 1.month
+    stat = if params[:stat] == ''
+             Letter.aasm.states.map(&:name)
+           else
+             params[:stat]
+           end
+    @letters = current_user.letters.where(created_at: from..to, letter_status: stat)
+    respond_to do |format|
+      format.js { render :search, layout: false }
+    end
+  end
+
   private
 
   def letter_params

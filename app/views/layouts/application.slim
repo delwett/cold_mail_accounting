@@ -13,4 +13,4 @@ html
       .h2.text-center.bg-primary = t('.application_hello', name: current_user.user_name)
     - else
       .h2.text-center = t('.application_welcome')
-    .container = yield
+    .container.mw-100.justify-content-center = yield
