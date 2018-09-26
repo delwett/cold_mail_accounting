@@ -8,11 +8,6 @@ module LettersHelper
   end
 
   def array_of_states_with_translate
-    @res = Array.new
-    @res << ['Any', nil]
-    Letter.aasm.states.map(&:name).each do |item|
-      @res << [t(item), item]
-    end
-    @res
+  [[t(:any), '']] + Letter.aasm.states.map(&:name).map { |item| [t(item), item]}
   end
 end
