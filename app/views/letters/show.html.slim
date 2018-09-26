@@ -4,19 +4,19 @@
 table.table-bordered.mx-auto.w-50.mt-1.table-hover#index_table
   tbody
     tr
-      td.col-2.p-3 = t(:url_lable)
-      td.col-10 = @letter.url
+      td.w-25.p-3 = t(:url_lable)
+      td.w-75 = @letter.url
     tr
-      td.col-2.p-3 = t(:email_lable)
-      td.col-10 = @letter.email
+      td.w-25.p-3 = t(:email_lable)
+      td.w-75 = @letter.email
 
     tr
-      td.col-2.p-3 = t(:status)
-      td.col-10 = t(@letter.letter_status)
+      td.w-25.p-3 = t(:status)
+      td.w-75 = t(@letter.letter_status)
 
     tr
-      td.col-2.p-3 = t(:comment)
-      td.col-10 = @letter.comment
+      td.w-25.p-3 = t(:comment)
+      td.w-75 = @letter.comment
 .row.p-4.justify-content-md-center.text-center
   .col-2 = button_to t(:back), letters_path, class: "btn btn-primary", method: :get
   .col-2 = button_to t(:edit), edit_letter_path(@letter), class: "btn btn-primary", method: :get

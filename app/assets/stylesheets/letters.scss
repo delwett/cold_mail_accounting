@@ -1,7 +1,13 @@
 // Place all the styles related to the letters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.col-10{
-  word-break: break-all;
+td{
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
+td.w-75{
+  word-break: break-all;
+  white-space: normal;
+}

@@ -2,11 +2,11 @@
   .row.sticky-top.m-1.w-75.align-items-end
     .col-2.text-center = link_to t(:create_new), new_letter_path, {class: "btn btn-outline-primary", type: "button", method: :get};
     .col-10
-      ul.nav.nav-tabs
-        li.active.btn = link_to t(:filter), "#filter",{ 'data-toggle': "tab"}
-        li.btn = link_to t(:find), "#find", { 'data-toggle': "tab"}
+      ul.nav.nav-tabs role = "tablist"
+        li.nav-item = link_to t(:filter), "#filter",{ 'data-toggle': "tab", class: "nav-link active", role: "tab", 'aria-controls': "home", 'aria-selected': "true"}
+        li.nav-item = link_to t(:find), "#find", { 'data-toggle': "tab", class: "nav-link", role: "tab", 'aria-controls': "home", 'aria-selected': "false"}
       .tab-content.text-center.align-items-center
-        .tab-pane.fade#filter = form_tag search_letters_path, method: :post, remote: true
+        .tab-pane.fade.active.show#filter  = form_tag search_letters_path, method: :post, remote: true
           .row.align-items-end
             .col-3
               = t(:from)

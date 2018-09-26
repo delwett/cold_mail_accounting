@@ -1,8 +1,8 @@
 tr
-  td = letter_row.url
-  td = letter_row.email
+  td title="#{letter_row.url}" = letter_row.url
+  td title="#{letter_row.email}" = letter_row.email
   td = t(letter_row.letter_status)
-  td = truncate(letter_row.comment, length: 30)
+  td title="#{letter_row.comment}" = letter_row.comment
   td
     .row.text-center
       .col-auto.ml-4 = link_to t(:edit), edit_letter_path(letter_row)
