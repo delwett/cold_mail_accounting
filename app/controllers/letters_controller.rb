@@ -36,7 +36,7 @@ class LettersController < ApplicationController
   end
 
   def search
-    to = params[:to].to_date || Date.today + 1
+    to = params[:to].to_date || Date.tomorrow
     from = params[:from].to_date || to - 1.month
     @letters = current_user.letters.where(created_at: from..to)
     @letters = @letters.where(letter_status: params[:stat]) if params[:stat].present?
@@ -47,7 +47,7 @@ class LettersController < ApplicationController
 
   def find_email
     letter = Letter.where(email: params[:email]).last
-    letter ? @msg = t(:success_find, name: letter.user.user_name, mail: params[:email]) : @msg = t(:ruin_find, mail: params[:email])
+    @msg = letter ? t(:success_find, name: letter.user.user_name, mail: params[:email]) : t(:not_found, mail: params[:email])
     respond_to do |format|
       format.js { render :find_email, layout: false }
     end
