@@ -7,7 +7,8 @@ td{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-td.w-75{
+.show-table{
   word-break: break-all;
   white-space: normal;
+  align-items: center;
 }
