@@ -45,6 +45,14 @@ class LettersController < ApplicationController
     end
   end
 
+  def find_email
+    letter = Letter.where(email: params[:email]).last
+    letter ? @msg = t(:success_find, name: letter.user.user_name, mail: params[:email]) : @msg = t(:ruin_find, mail: params[:email])
+    respond_to do |format|
+      format.js { render :find_email, layout: false }
+    end
+  end
+
   private
 
   def letter_params

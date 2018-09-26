@@ -19,16 +19,15 @@
               = select_tag :stat, options_for_select(array_of_states_with_translate), { class: "form-control" }
             .col-3
               = submit_tag t(:filter), {class: "btn btn-outline-primary"}
-        .tab-pane.fade#find = form_tag search_letters_path, method: :post, remote: true
+        .tab-pane.fade#find = form_tag find_email_letters_path, method: :post, remote: true
           .row.align-items-end
             .col-9
               = t(:email_lable)
-              = email_field_tag :to , {}, { class: "form-control" }
+              = email_field_tag :email , "", { class: "form-control" }
             .col-3
               = submit_tag t(:find), {class: "btn btn-outline-primary"}
 
-- if flash.notice
-  .h5.text-danger.text-center = flash.notice
+.h5.text-danger.text-center.js-flash = flash&.notice
 
 table.table-bordered.table-hover.w-100
   thead.text-center.table-info

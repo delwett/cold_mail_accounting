@@ -92,3 +92,7 @@ en:
   find: 'Find'
   any: 'Any'
   filter: 'Filter'
+
+  success_find: "%{mail} address was used by %{name}"
+  ruin_find: "%{mail} address was not used"
+  logout: "Log out"

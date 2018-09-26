@@ -10,7 +10,9 @@ html
 
   body
     - if user_signed_in?
-      .h2.text-center.bg-primary = t('.application_hello', name: current_user.user_name)
+      .row.bg-primary
+          .col-10.h2.text-center = t('.application_hello', name: current_user.user_name)
+          .col-2 =button_to t(:logout), destroy_user_session_path, {class: "btn btn-outline-dark", method: :delete}
     - else
       .h2.text-center = t('.application_welcome')
     .container.mw-100.justify-content-center = yield
