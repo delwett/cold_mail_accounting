@@ -96,3 +96,5 @@ en:
   success_find: "%{mail} address was used by %{name}"
   not_found: "%{mail} address was not used"
   logout: "Log out"
+
+  bottom_stat: 'Your statistics on %{this_month}: New: %{new}, In progress: %{in_progress}, Completed: %{completed}, Cancelled: %{cancelled}'

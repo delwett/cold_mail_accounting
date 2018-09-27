@@ -44,3 +44,5 @@
         th = t(:updated_at)
     tbody.js-letter-row
       = render partial: "letter_row", collection:  @letters
+  .row
+    .col = t(:bottom_stat, this_month: l(Date.today, format: '%B'), new: @count_stat_this_month['new'], in_progress: @count_stat_this_month['in_progress'], completed: @count_stat_this_month['completed'], cancelled: @count_stat_this_month['cancelled'])

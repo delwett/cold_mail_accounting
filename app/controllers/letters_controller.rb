@@ -2,6 +2,7 @@ class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update]
   def index
     @letters = current_user.letters
+    @count_stat_this_month = @letters.beginning_month_to_today.group(:letter_status).count
   end
 
   def show; end

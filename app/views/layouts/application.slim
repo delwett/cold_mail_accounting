@@ -13,7 +13,7 @@ html
       .row.bg-primary.pt-2
         .col-4
         .col-4.h2.text-center = t('.application_hello', name: current_user.user_name)
-        .col-4.text-right.pr-5 =button_to t(:logout), destroy_user_session_path, {class: "btn btn-outline-dark", method: :delete}
+        .col-4.text-right.pr-5 = button_to t(:logout), destroy_user_session_path, {class: "btn btn-outline-dark", method: :delete}
     - else
       .h2.text-center = t('.application_welcome')
     .container.mw-100.justify-content-center = yield
