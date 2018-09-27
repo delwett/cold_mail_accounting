@@ -22,9 +22,69 @@ ru:
       create: 'Создание письма'
       update: 'Модификация письма'
 
+#  date:
+#    formats:
+#      test: '%d.%m.%y'
+#      month_string: '%B'
+
   date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    -
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - Воскресенье
+    - Понедельник
+    - Вторник
+    - Среда
+    - Четверг
+    - Пятница
+    - Суббота
     formats:
-      test: '%d.%m.%y'
+      default: "%d.%m.%Y"
+      long: "%-d %B %Y"
+      only_date: "%d %B %Y"
+      only_month: "%B %Y"
+      only_year: "%Y"
+      schedule_header: "%a, %-d"
+      short: "%-d %b"
+      test: '%d-%m-%y'
+    month_names:
+    -
+    - Январь
+    - Февраль
+    - Март
+    - Апрель
+    - Май
+    - Июнь
+    - Июль
+    - Август
+    - Сентябрь
+    - Октябрь
+    - Ноябрь
+    - Декабрь
+    order:
+    - :day
+    - :month
+    - :year
   time:
     formats:
       test: '%d.%m.%y %H:%M'
@@ -65,3 +125,5 @@ ru:
   success_find: "%{mail} был использован %{name}"
   not_found: "%{mail} ещё не был использован"
   logout: "Выйти из уч. записи"
+
+  bottom_stat: 'Ваша статистика на %{this_month}: Новых: %{new}, В работе: %{in_progress}, Завершенных: %{completed}, Отмененных: %{cancelled}'

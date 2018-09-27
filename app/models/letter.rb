@@ -7,6 +7,9 @@ class Letter < ApplicationRecord
   validates :url, format: { :with => /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i }
   validates :comment, length: { maximum: 500 }
 
+  scope :beginning_month_to_today, -> { where(created_at: Date.today.beginning_of_month..Date.tomorrow) }
+  scope :count_status, -> { group(:letter_status).count }
+
   aasm column: 'letter_status' do
     state :new, initial: true
     state :in_progress
