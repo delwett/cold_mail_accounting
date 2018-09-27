@@ -1,7 +1,8 @@
 .d-flex.justify-content-center
-  .row.sticky-top.m-1.w-75.align-items-end
-    .col-2.text-center = link_to t(:create_new), new_letter_path, {class: "btn btn-outline-primary", type: "button", method: :get};
-    .col-10
+  .row.m-1.w-100.align-items-end
+    .col-1
+    .col-2 = link_to t(:create_new), new_letter_path, {class: "btn btn-outline-primary", type: "button", method: :get};
+    .col-8
       ul.nav.nav-tabs role = "tablist"
         li.nav-item = link_to t(:filter), "#filter",{ 'data-toggle': "tab", class: "nav-link active", role: "tab", 'aria-controls': "home", 'aria-selected': "true"}
         li.nav-item = link_to t(:find), "#find", { 'data-toggle': "tab", class: "nav-link", role: "tab", 'aria-controls': "home", 'aria-selected': "false"}
@@ -26,18 +27,20 @@
               = email_field_tag :email , "", { class: "form-control" }
             .col-3
               = submit_tag t(:find), {class: "btn btn-outline-primary"}
+    .col-1
 
 .h5.text-danger.text-center.js-flash = flash&.notice
 
-table.table-bordered.table-hover.w-100
-  thead.text-center.table-info
-    tr
-      th = t(:url_lable)
-      th = t(:email_lable)
-      th = t(:status)
-      th = t(:comment)
-      th = t('.action')
-      th = t(:created_at)
-      th = t(:updated_at)
-  tbody.js-letter-row
-    = render partial: "letter_row", collection:  @letters
+.justify-content-center.ml-5.mr-5
+  table.table.table-bordered.table-hover
+    thead.text-center.table-info
+      tr
+        th = t(:url_lable)
+        th = t(:email_lable)
+        th = t(:status)
+        th = t(:comment)
+        th = t('.action')
+        th = t(:created_at)
+        th = t(:updated_at)
+    tbody.js-letter-row
+      = render partial: "letter_row", collection:  @letters
