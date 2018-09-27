@@ -90,5 +90,9 @@ en:
   from: 'From'
   to:  'To'
   find: 'Find'
-
   any: 'Any'
+  filter: 'Filter'
+
+  success_find: "%{mail} address was used by %{name}"
+  not_found: "%{mail} address was not used"
+  logout: "Log out"

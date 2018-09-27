@@ -59,5 +59,9 @@ ru:
   from: 'От'
   to:  'До'
   find: 'Нати'
-
   any: 'Любой'
+  filter: 'Фильтровать'
+
+  success_find: "%{mail} был использован %{name}"
+  not_found: "%{mail} ещё не был использован"
+  logout: "Выйти из уч. записи"

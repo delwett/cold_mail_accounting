@@ -1,22 +1,19 @@
-.h3.text-primary.text-center =t('.show_lable')
+.h3.text-primary.text-center.p-3 =t('.show_lable')
 - if flash.notice
   .h5.text-success.text-center = flash.notice
-table.table-bordered.mx-auto.w-50.mt-1.table-hover
-  tbody
-    tr
-      td.col-2.p-3 = t(:url_lable)
-      td.col-10 = @letter.url
-    tr
-      td.col-2.p-3 = t(:email_lable)
-      td.col-10 = @letter.email
-
-    tr
-      td.col-2.p-3 = t(:status)
-      td.col-10 = t(@letter.letter_status)
-
-    tr
-      td.col-2.p-3 = t(:comment)
-      td.col-10 = @letter.comment
-.row.p-4.justify-content-md-center.text-center
-  .col-2 = button_to t(:back), letters_path, class: "btn btn-primary", method: :get
-  .col-2 = button_to t(:edit), edit_letter_path(@letter), class: "btn btn-primary", method: :get
+.container.show-table
+  .row.p-3
+    .col-6.text-right = t(:url_lable)
+    .col-6 = @letter.url
+  .row.p-3
+    .col-6.text-right = t(:email_lable)
+    .col-6= @letter.email
+  .row.p-3
+    .col-6.text-right = t(:status)
+    .col-6 = t(@letter.letter_status)
+  .row.p-3
+    .col-6.text-right = t(:comment)
+    .col-6 = @letter.comment
+  .row.p-4.justify-content-md-center.text-center
+    .col-6.text-right = button_to t(:back), letters_path, class: "btn btn-primary", method: :get
+    .col-6.text-left = button_to t(:edit), edit_letter_path(@letter), class: "btn btn-primary", method: :get

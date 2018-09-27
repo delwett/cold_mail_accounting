@@ -2,10 +2,10 @@ tr
   td = letter_row.url
   td = letter_row.email
   td = t(letter_row.letter_status)
-  td = truncate(letter_row.comment, length: 30)
+  td = letter_row.comment
   td
-    .row.text-center
-      .col-auto.ml-4 = link_to t(:edit), edit_letter_path(letter_row)
-      .col-auto.text-left.ml-3 = link_to t(:show), letter_path(letter_row)
+    .row.text-center.justify-content-center
+      .col-3 = link_to t(:edit), edit_letter_path(letter_row)
+      .col-3.pr-5 = link_to t(:show), letter_path(letter_row)
   td = l(letter_row.created_at, format: :test)
   td = l(letter_row.updated_at, format: :test)

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :letters do
     collection do
       post 'search'
+      post 'find_email'
     end
   end
 
