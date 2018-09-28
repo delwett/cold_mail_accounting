@@ -8,7 +8,7 @@ class Letter < ApplicationRecord
   validates :comment, length: { maximum: 500 }
 
   scope :beginning_month_to_today, -> { where(created_at: Date.today.beginning_of_month..Date.tomorrow) }
-  scope :last_half_year, -> { where(created_at: Date.today.months_ago(6)..Date.tomorrow) }
+  scope :last_half_year, -> { where('created_at > ?', Date.today.months_ago(6)) }
 
   aasm column: 'letter_status' do
     state :new, initial: true
