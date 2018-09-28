@@ -86,8 +86,13 @@ ru:
     - :month
     - :year
   time:
+    am: утра
     formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
       test: '%d.%m.%y %H:%M'
+    pm: вечера
 
   new: 'Новое'
   in_progress: 'В работе'
