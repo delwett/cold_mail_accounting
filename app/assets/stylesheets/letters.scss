@@ -12,4 +12,8 @@ td{
   white-space: normal;
   align-items: center;
 }
-
+.col_stat{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -54,6 +54,15 @@ class LettersController < ApplicationController
     end
   end
 
+  def half_year_statistics
+    @statistics = current_user.letters.last_half_year.order(:created_at).group_by { |item| item.created_at.strftime("%B") }
+      .map do |month, letters| [
+        month, letters.group_by(&:letter_status)
+          .map { |k, status| [k, status.count] }
+      ]
+    end
+  end
+
   private
 
   def letter_params

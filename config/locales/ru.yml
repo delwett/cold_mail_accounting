@@ -127,3 +127,4 @@ ru:
   logout: "Выйти из уч. записи"
 
   bottom_stat: 'Ваша статистика на %{this_month}: Новых: %{new}, В работе: %{in_progress}, Завершенных: %{completed}, Отмененных: %{cancelled}'
+  half_year_stat: 'Статистика за половину года'

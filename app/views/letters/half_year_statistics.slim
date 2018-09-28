@@ -1,0 +1,11 @@
+.row.m-2.justify-content-center
+  .col-6.text-center.h3.font-weight-bold = t(:half_year_stat)
+- @statistics.each do |month, statuses|
+  .row.justify-content-center
+    .col-6.bg-primary.text-center = month
+  - statuses.each do |status, count|
+    .row.justify-content-center
+      .col-3.bg-light.text-right.col_stat #{t(status)} :
+      .col-3.bg-light.col_stat = count
+.row.p-4.justify-content-center
+  .col-6.text-center = button_to t(:back), letters_path, class: "btn btn-primary", method: :get
