@@ -98,3 +98,4 @@ en:
   logout: "Log out"
 
   bottom_stat: 'Your statistics on %{this_month}: New: %{new}, In progress: %{in_progress}, Completed: %{completed}, Cancelled: %{cancelled}'
+  half_year_stat: 'Half-year statistics'
