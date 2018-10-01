@@ -94,6 +94,7 @@ ru:
       test: '%d.%m.%y %H:%M'
     pm: вечера
 
+  all: 'Все'
   new: 'Новое'
   in_progress: 'В работе'
   completed: 'Завершено'

@@ -65,6 +65,7 @@ en:
       short: "%d %b %H:%M"
     pm: pm
 
+  all: 'All'
   new: 'New'
   in_progress: 'In progress'
   completed: 'Completed'

@@ -1,10 +1,10 @@
 ActiveAdmin.register Letter do
 
-  scope :all, default: true, group: :status
-  scope I18n.t(:new), :new_letters, group: :status
-  scope I18n.t(:in_progress), :in_progress_letters, group: :status
-  scope I18n.t(:completed), :completed_letters, group: :status
-  scope I18n.t(:cancelled), :cancelled_letters, group: :status
+  scope -> { I18n.t(:all) }, :all, default: true
+  scope -> { I18n.t(:new) }, :new_letters, group: :status
+  scope -> { I18n.t(:in_progress) }, :in_progress_letters, group: :status
+  scope -> { I18n.t(:completed) }, :completed_letters, group: :status
+  scope -> { I18n.t(:cancelled) }, :cancelled_letters, group: :status
 
   filter :user
   filter :url
