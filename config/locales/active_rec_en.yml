@@ -1,0 +1,47 @@
+en:
+  activerecord:
+    models:
+      letter:
+        one: Letter
+        other: Letters
+      user:
+        one: User
+        other: Users
+      admin_user:
+        one: Admin
+        other: Admins
+      comment:
+        one: Admin comment
+        other: Admin comments
+    attributes:
+      letter:
+        url: URL
+        email: E-mail
+        letter_status: Letter status
+        comment: Comment
+        created_at: Created at
+        updated_at: Updated at
+      user:
+        email: E-mail
+        encrypted_password: Encrypted password
+        user_name: User name
+        created_at: Created at
+        updated_at: Updated at
+        reset_password_token: Reset password token
+        reset_password_sent_at: Reset password sent at
+        remember_created_at: Remember created at
+      admin_user:
+        email: E-mail
+        encrypted_password: Encrypted password
+        created_at: Created at
+        updated_at: Updated at
+        reset_password_token: Reset password token
+        reset_password_sent_at: Reset password sent at
+        remember_created_at: Remember created at
+      active_admin/comment:
+        namespace: Namespace
+        body: Body
+        resource_type: Resource type
+        author_type: Author type
+        created_at: Created at
+        updated_at: Updated at
