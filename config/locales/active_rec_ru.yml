@@ -21,6 +21,7 @@ ru:
         comment: Комментарий
         created_at: Создано
         updated_at: Обновлено
+        user: Пользователь
       user:
         email: Адрес эл. почты
         encrypted_password: Зашифрованный пароль
