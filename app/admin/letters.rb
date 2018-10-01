@@ -1,5 +1,5 @@
 ActiveAdmin.register Letter do
-  before_action :set_letter, only: [:show, :edit, :update]
+
   scope -> { I18n.t(:all) }, :all, default: true
   scope -> { I18n.t(:new) }, :new_letters, group: :status
   scope -> { I18n.t(:in_progress) }, :in_progress_letters, group: :status
@@ -48,16 +48,15 @@ ActiveAdmin.register Letter do
       row :created_at
       row :updated_at
     end
-    active_admin_comments
   end
 
   controller do
     def update
-      @letter.update(letter_params.except(:letter_status))
+      resource.update(letter_params.except(:letter_status))
       respond_to do |format|
-        if @letter.save
+        if resource.save
           set_status_from_params
-          format.html { redirect_to admin_letter_path(@letter) }
+          format.html { redirect_to admin_letter_path(resource) }
         else
           format.html { render :edit }
         end
@@ -78,24 +77,6 @@ ActiveAdmin.register Letter do
         @letter.to_cancelled!
       end
     end
-
-    def set_letter
-      @letter = Letter.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      redirect_to admin_letters_path
-    end
   end
-# See permitted phttp://0.0.0.0:3000/admin/letters?scope=allarameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
 
 end
