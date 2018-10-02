@@ -49,6 +49,9 @@ ActiveAdmin.register Letter do
       row :updated_at
     end
   end
+  action_item :back_to_index, only: %i[show edit] do
+    link_to(I18n.t(:back), admin_letters_path)
+  end
 
   controller do
     def update

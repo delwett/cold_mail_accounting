@@ -1,5 +1,6 @@
 class LettersController < ApplicationController
   before_action :set_letter, only: [:show, :edit, :update]
+  before_action :authenticate_user!
   def index
     @letters = current_user.letters
     @count_stat_this_month = @letters.beginning_month_to_today.group(:letter_status).count
