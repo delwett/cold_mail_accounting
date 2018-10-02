@@ -25,6 +25,7 @@ ru:
       user:
         email: Адрес эл. почты
         encrypted_password: Зашифрованный пароль
+        password: Пароль
         user_name: Имя пользователя
         created_at: Создано
         updated_at: Обновлено

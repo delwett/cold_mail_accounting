@@ -1,0 +1,7 @@
+ru:
+  fill_field_lable: Заполните поля
+  new: 'Новое'
+  in_progress: 'В работе'
+  completed: 'Завершено'
+  cancelled: 'Отменено'
+  status_label: 'Статус: %{status}'

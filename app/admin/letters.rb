@@ -49,7 +49,22 @@ ActiveAdmin.register Letter do
       row :updated_at
     end
   end
-  action_item :back_to_index, only: %i[show edit] do
+
+  form do |form|
+    inputs I18n.t(:fill_field_lable) do
+      input :user, collection: User.all.map { |usr| [usr.user_name, usr.id] }
+      input :url
+      input :email
+      if object.persisted? && available_event
+        input :letter_status, collection: available_states.collect { |av| [t(av), av] }
+      else
+        li t(:status_label, status: t(resource.letter_status))
+      end
+      input :comment
+      actions
+    end
+  end
+  action_item :back_to_index, only: %i[show edit new] do
     link_to(I18n.t(:back), admin_letters_path)
   end
 
@@ -67,7 +82,7 @@ ActiveAdmin.register Letter do
     end
 
     def letter_params
-      params.require(:letter).permit(:url, :email, :comment, :letter_status)
+      params.require(:letter).permit(:user_id, :url, :email, :comment, :letter_status)
     end
 
     def set_status_from_params
@@ -79,6 +94,14 @@ ActiveAdmin.register Letter do
       when 'to_cancelled'
         @letter.to_cancelled!
       end
+    end
+
+    def available_event
+      resource.aasm.events(permitted: true).map(&:name).any?
+    end
+
+    def available_states
+      @letter.aasm.events(permitted: true).map(&:name) << @letter.letter_status
     end
   end
 
