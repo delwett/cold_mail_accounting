@@ -1,0 +1,7 @@
+en:
+  fill_field_lable: Fill the fields
+  status_label: 'Status: %{status}'
+  new: 'New'
+  in_progress: 'In progress'
+  completed: 'Completed'
+  cancelled: 'Cancelled'

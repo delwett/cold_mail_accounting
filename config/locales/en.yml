@@ -57,9 +57,15 @@ en:
     formats:
       test: '%m/%d/%y'
   time:
+    am: am
     formats:
       test: '%m/%d/%y %H:%M'
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
 
+  all: 'All'
   new: 'New'
   in_progress: 'In progress'
   completed: 'Completed'

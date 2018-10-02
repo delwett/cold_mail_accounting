@@ -10,6 +10,10 @@ class Letter < ApplicationRecord
   scope :beginning_month_to_today, -> { where(created_at: Date.today.beginning_of_month..Date.tomorrow) }
   scope :last_half_year, -> { where('created_at > ?', Date.today.months_ago(6)) }
 
+  scope :new_letters, -> { where(letter_status: 'new') }
+  scope :in_progress_letters, -> { where(letter_status: 'in_progress') }
+  scope :completed_letters, -> { where(letter_status: 'completed') }
+  scope :cancelled_letters, -> { where(letter_status: 'cancelled') }
   aasm column: 'letter_status' do
     state :new, initial: true
     state :in_progress
