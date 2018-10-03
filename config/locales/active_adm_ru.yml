@@ -5,3 +5,4 @@ ru:
   completed: 'Завершено'
   cancelled: 'Отменено'
   status_label: 'Статус: %{status}'
+  admin_message: 'Сообщение от администиратора учета холодной почты'

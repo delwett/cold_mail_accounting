@@ -5,3 +5,4 @@ en:
   in_progress: 'In progress'
   completed: 'Completed'
   cancelled: 'Cancelled'
+  admin_message: 'Message from cold mail accounting admin'

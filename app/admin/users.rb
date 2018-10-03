@@ -17,10 +17,32 @@ ActiveAdmin.register User do
     actions
   end
 
+  show do
+    attributes_table do
+      row :email
+      row :encrypted_password
+      row :user_name
+      row :reset_password_token
+      row :reset_password_sent_at
+      row :remember_created_at
+      row :created_at
+      row :updated_at
+    end
+    div do
+      form action: send_mail_admin_user_path, method: :get do |f|
+        f.input :message_field, type: :text, name: 'message_field'
+        f.input :submit, type: :submit
+      end
+    end
+  end
+  member_action :send_mail, method: :get do
+    AdminMessageMailer.message_to_user(resource.email, params[:message_field]).deliver_later
+    redirect_to '/'
+  end
+
 
   form do |form|
     inputs I18n.t(:fill_field_lable) do
-      # binding.pry
       input :email
       input :user_name
       input :password
