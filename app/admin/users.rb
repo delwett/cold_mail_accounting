@@ -36,9 +36,8 @@ ActiveAdmin.register User do
     end
   end
   member_action :send_mail, method: :get do
-    # resource.email, params[:message_field]
     SendEmailJob.set(wait: 10.seconds).perform_later(resource.email, params[:message_field])
-    redirect_to '/'
+    redirect_to admin_users_path
   end
 
 

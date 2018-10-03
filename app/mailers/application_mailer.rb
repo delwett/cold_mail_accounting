@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'dmitriy.trunin@kodep.ru'
+  default from: ENV['MAIL_LOGIN']
   layout 'mailer'
 end
