@@ -1,0 +1,13 @@
+h1 = t(:chart_lable)
+ruby:
+    data = { 
+        labels: @lable, 
+        datasets: [{ 
+            data: @data, 
+            backgroundColor: ["rgb(255,99,32)", "rgb(54,162,235)", "rgb(255,205,86)"]
+            }
+    ]}
+    options = {
+      
+     }
+= doughnut_chart data, options

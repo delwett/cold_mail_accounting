@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'aasm'
 gem 'devise'
 gem 'activeadmin'
+gem 'chartjs-ror'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
