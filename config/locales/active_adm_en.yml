@@ -6,3 +6,4 @@ en:
   completed: 'Completed'
   cancelled: 'Cancelled'
   admin_message: 'Message from cold mail accounting admin'
+  chart_lable: 'Statistics of letters by users'

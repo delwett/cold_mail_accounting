@@ -1,0 +1,4 @@
+h1 = t(:chart_lable)
+- data = { labels: t(@states.sort), datasets: @dataset}
+- options = { scales: { yAxes: [{ ticks: { beginAtZero: true}}]}}
+= bar_chart data, options
