@@ -36,9 +36,7 @@ class Letter < ApplicationRecord
 
   def self.get_count(states, letters)
     count = letters.group(:letter_status).count
-    states.each do |state|
-      count[state.to_s] = 0 unless count[state.to_s].present?
-    end
+    states.each { |state| count[state.to_s] = 0 if count[state.to_s].blank? }
     count.sort.to_h
   end
 end
