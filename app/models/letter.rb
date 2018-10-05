@@ -14,6 +14,7 @@ class Letter < ApplicationRecord
   scope :in_progress_letters, -> { where(letter_status: 'in_progress') }
   scope :completed_letters, -> { where(letter_status: 'completed') }
   scope :cancelled_letters, -> { where(letter_status: 'cancelled') }
+  scope :letters_count, -> { group(:letter_status).count }
   aasm column: 'letter_status' do
     state :new, initial: true
     state :in_progress
@@ -31,5 +32,13 @@ class Letter < ApplicationRecord
     event :to_cancelled do
       transitions from: [:new, :in_progress], to: :cancelled
     end
+  end
+
+  def self.get_count(states, letters)
+    count = letters.group(:letter_status).count
+    states.each do |state|
+      count[state.to_s] = 0 unless count[state.to_s].present?
+    end
+    count.sort.to_h
   end
 end
